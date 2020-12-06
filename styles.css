@@ -1,0 +1,122 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: "Neue Montreal";
+  background: #161616;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  position: relative;
+  background: #fff;
+  color: #000;
+  width: 540px;
+  height: 340px;
+  transition: all 0.2s ease-out;
+  overflow: hidden;
+}
+
+.plus-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 30px;
+  font-size: 20px;
+  color: gray;
+}
+
+.card-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+}
+
+.preview-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  font-size: 20px;
+  color: gray;
+}
+
+.card-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 260px;
+  height: 260px;
+  border-radius: 100%;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.card-container:hover {
+  background: #000;
+  color: #fff;
+  transition: all 0.2s ease-out;
+}
+
+.card-container:hover .preview-text,
+.card-container:hover .plus-icon {
+  color: #fff;
+}
+
+.card-container:hover .card-icon {
+  display: none;
+}
+
+.card-container:hover .card-circle {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.text-wrapper {
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  transform: translate(0, -50%);
+  font-size: 40px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: 0.1s ease-out;
+  animation: float-text 40s linear infinite;
+  animation-delay: 0.3s;
+  z-index: 2;
+  /* border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff; */
+  opacity: 0;
+  padding: 20px 0;
+  mix-blend-mode: difference;
+}
+
+@keyframes float-text {
+  0% {
+    left: -20%;
+  }
+
+  50% {
+    left: -100%;
+  }
+
+  100% {
+    left: -20%;
+  }
+}
+
+.card-container:hover .text-wrapper {
+  opacity: 1;
+}
